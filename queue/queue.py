@@ -30,3 +30,27 @@ class Queue:
             self.size -= 1
             return self.storage.pop(0)
 # End Of Array Queue            
+
+# Queue using linked list
+
+from sll_copy import *
+
+class Queue:
+    def __init__(self):
+        self.size = 0
+        self.storage = LinkedList()
+
+    def __len__(self):
+        return self.size
+
+    def enqueue(self, value):
+        self.storage.add_to_tail(value)
+        self.size += 1
+
+    def dequeue(self):
+        if self.size == 0:
+            return None
+        else:
+            popper = self.storage.remove_head()
+            self.size -= 1
+            return popper
