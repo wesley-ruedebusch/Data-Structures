@@ -11,13 +11,42 @@ This part of the project comprises two days:
 """
 class BSTNode:
     def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+        if value < self.value:
+            # go left
+            # check for another node
+            if self.left:
+                #then self.left is a node
+               self.left.insert(value)
+            else:
+                self.left = BSTNode(value)
+        # if greater than or equal, 
+        else:
+            # go right
+            # check for another node
+            if self.right:
+                #then self.right is a node
+                self.right.insert(value)
+            else:
+                self.right = BSTNode(value)
 
     # Insert the given value into the tree
     def insert(self, value):
-        pass
+        # check if tree is empty
+        if self is None:
+            return False
+        # check if self is the target
+        elif self.value == target:
+            return True
+        elif target < self.value:
+            if self.left:
+               return self.left.contains(target)
+            else:
+                return False
+        else:
+            if self.right:
+               return self.right.contains(target)
+            else:
+                return False 
 
     # Return True if the tree contains the value
     # False if it does not
