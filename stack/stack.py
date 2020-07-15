@@ -27,7 +27,7 @@ class Node:
     # set this node's next reference to `new_next`
         self.next = new_next
 
-# this is bad
+# not production , could use for testing purposes
 # node = Node(1)
 # node.set_next(Node(2))
 # node.get_next().set_next(Node(3))
